@@ -24,7 +24,7 @@ setup(
     long_description = readme(),
     license = "MIT",
     keywords = "periodogram FFT DFT",
-    url = "",
+    url = "https://github.com/rthiele/periodogram",
 
     include_package_data = True
 )
