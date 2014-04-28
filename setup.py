@@ -9,7 +9,7 @@ setup(
     version = "0.1",
     packages = find_packages(),
 
-    install_requires = ['numpy>=1.8.1', 'matplotlib>=1.3.1', 'markdown'],
+    install_requires = ['numpy>=1.8.1', 'matplotlib>=1.3.1'],
 
     entry_points = {
         'console_scripts': [

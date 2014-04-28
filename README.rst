@@ -14,6 +14,20 @@ It supports the built-in numpy FFT functions as well as pyFFTW. Take a look at
 the paper mentioned above for the right window function. The library is tested
 with Python 2.7 and Python 3.3.
 
+Install
+-------
+
+The library can be installed directly from the git repository using ``pip``::
+
+  pip install git+https://github.com/rthiele/periodogram.git
+
+Use the ``--user`` argument of pip install to install to the current users home
+directory instead of a system wide install.
+
+The library can also be installed from a local copy using::
+
+  python setup.py install
+
 License
 -------
 
