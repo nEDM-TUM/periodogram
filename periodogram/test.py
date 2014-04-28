@@ -9,7 +9,7 @@ def test_data(fs=10000., f1=1234., amp1=2.82842712474619, f2=2500.2157, amp2=1.,
     ur = floor(u/ulsb + 0.5)*ulsb
     return ur
 
-if __name__ == '__main__':
+def __run():
     N = 3328
     d = test_data()
     p = Periodogram(d, 10000., N, window='HFT116D', overlap=0.5)
@@ -27,3 +27,6 @@ if __name__ == '__main__':
     plot(p.f, p.lsd())
     yscale('log')
     show()
+
+if __name__ == '__main__':
+    __run()
