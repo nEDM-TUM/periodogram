@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # coding: utf-8
 
 import numpy
@@ -116,3 +117,34 @@ class Periodogram:
 
     def lsd(self, *a, **aa):
         return numpy.sqrt(self.psd(*a, **aa))
+
+def __run():
+    import argparse
+    import cPickle
+
+    p = argparse.ArgumentParser(
+            description="Save pickeled periodograms")
+    p.add_argument('file', nargs='+',
+            help="input files")
+    p.add_argument('samplerate', type=float,
+            help="samplerate of input data")
+    p.add_argument('N', type=int,
+            help="length of samples that are averaged")
+    p.add_argument('--overlap', '-o', type=float,
+            help="overlap", default=0.5)
+    p.add_argument('--window', '-w', default='hanning',
+            help="window function")
+
+    args = p.parse_args()
+
+    for fn in args.file:
+        d = numpy.load(fn)
+        p = Periodogram(d, args.samplerate, args.N, args.window,
+                args.overlap)
+        p.ps()
+
+        with open("fft_%s.pickle" % fn, 'wb') as outfile:
+            cPickle.dump(p, outfile, 2)
+
+if __name__ == '__main__':
+    __run()
