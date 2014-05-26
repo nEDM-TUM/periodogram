@@ -6,7 +6,7 @@ def readme():
 
 setup(
     name = "periodogram",
-    version = "0.1",
+    version = "0.2",
     packages = find_packages(),
 
     install_requires = ['numpy>=1.8.1', 'matplotlib>=1.3.1'],

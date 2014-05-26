@@ -80,7 +80,7 @@ class Periodogram:
 
             for i in range(number_of_averages):
                 # sum FFTs
-                t_start = number_of_averages*dt
+                t_start = i*dt
                 fft = _fft(self.data[t_start:t_start+self.N]*self.window)
                 ps += abs(fft)**2
 
